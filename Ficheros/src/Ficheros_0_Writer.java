@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 
-public class Ficheros_0 {
+public class Ficheros_0_Writer {
 
 	public static void main(String[] args){
 		// CREAR Y ESCRIBIR EN FICHEROS DE TEXTO EN JAVA.

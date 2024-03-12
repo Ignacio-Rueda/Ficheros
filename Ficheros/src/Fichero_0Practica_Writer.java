@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Fichero_0Practica {
+public class Fichero_0Practica_Writer {
 	
 	
 	public static void main(String args[]){
