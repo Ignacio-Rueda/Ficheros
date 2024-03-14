@@ -13,7 +13,7 @@ public class Fichero_0_Practica_Reader {
 		BufferedReader br = null;
 	
 		try {
-			fr = new FileReader("c:/ficheros/datos.txt");
+			fr = new FileReader("c:/ficheros/datos");
 			br = new BufferedReader(fr);
 			
 			String linea = br.readLine();
