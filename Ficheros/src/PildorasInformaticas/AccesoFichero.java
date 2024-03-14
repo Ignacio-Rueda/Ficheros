@@ -20,10 +20,13 @@ class LeerFichero{
 		try {
 			FileReader fr = new FileReader("c:/ficheros/datos.txt");
 			int c = fr.read();
+			System.out.print((char)c);
 			while(c != -1) {
-				System.out.println(c);
 				c = fr.read();
+				System.out.print((char)c);
+				
 			}
+			fr.close(); 
 		}catch(IOException ex) {
 			System.out.println(ex.getMessage());
 		}
