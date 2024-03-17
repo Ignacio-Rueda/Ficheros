@@ -6,7 +6,7 @@ public class Eliminar {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		File ruta = new File("c:/ficheros/NUEVO_FICHERO");
+		File ruta = new File("c:/ficheros/NUEVO_FICHERO.txt");
 		System.out.println(ruta.exists());
 		ruta.delete();
 	}
