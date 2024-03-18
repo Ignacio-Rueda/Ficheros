@@ -1,10 +1,9 @@
 ## Índice
 [Introducción](#introducción)  
 
-[Leer-Ficheros-Caracteres](#leer-ficheros-caracteres)  
+[Leer-Y-Escribir-Caracteres](#leer-y-escribir-caracteres)  
 
-[Escribir-Ficheros-Caracteres](#escribir-ficheros-caracteres)  
-
+[Sobre-Buffer](#sobre-buffer)
 
 ## Introducción  
 Existen dos tipos de flujos:  
@@ -20,7 +19,13 @@ Un __Buffer__ es una especie de memoria interna que se coloca entre medias de nu
 El objetivo de la memmoria intermedia es: En lugar de acceder directamente desde nuestro código java al archivo, lo hagamos a esta memoria intermedia, de manera que:  
 - La información contenida en el archivo de texto se vuelca COMPLETAMENTE al Buffer, se almacena en ese Buffer y una vez que la información del archivo está integramente en el Buffer, es nuestro programa java, quien accede a ese Buffer para ir descargando poco a poco esa información. Des este modo se gana en rapidez y eficiencia.  
 El Buffer lo podemos usar tanto para escribir como para leer información de un fichero externo (BufferReader - BufferWriter).  
-## Leer Ficheros Caracteres
-![Lectura fichero texto](img/Lectura%20ficheros%20texto.PNG)
-## Escribir Ficheros Caracteres
-![Escribir fichero texto](img/Escribir%20ficheros%20texto.PNG)
+## Leer y Escribir Caracteres
+En este ejemplo utilizamos try-with-resources  
+- Como ventaja, no tenemos que cerrar el fichero, se hace automáticamente.
+- Emplear el método flush(), nos evita la pérdida de información.
+![Leer y escribir fichero texto](img/LeerYEscribirFicherosTexto.PNG)  
+
+## Sobre Buffer  
+En este ejemplo, volvemos a utilizar try-with-resources.  
+De manera que no tenemos que cerrar ninguna de las dos conexiones con los ficheros de entrada o salida.
+![Sobre Buffer](img/BufferedReaderYBufferedWriter.PNG)  
