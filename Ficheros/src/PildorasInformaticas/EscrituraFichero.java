@@ -1,6 +1,5 @@
 package PildorasInformaticas;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
