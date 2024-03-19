@@ -1,50 +1,46 @@
 package EjemplosAborrar;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Principal {
 
 	public static void main(String args[]) {
-		try (RandomAccessFile ficheroFactura = new RandomAccessFile(
-				"c:" + File.separator + "ficheros" + File.separator + "Facturas" + File.separator + "marzo.dat",
-				"rw");) {
 
-			// Insertarmos facturas en la lista.
-			List<Factura> entradaFacturas = new LinkedList<>();
-			entradaFacturas.add(new Factura(1, "LUZ", 30.5));
-			entradaFacturas.add(new Factura(2, "AGUA", 35.5));
-			entradaFacturas.add(new Factura(3, "GAS", 60.5));
-			entradaFacturas.add(new Factura(4, "ALIMENTOS", 230.5));
-			entradaFacturas.add(new Factura(5, "INTERNET", 23.5));
-			// Intoducir los datos en en el fichero.
-			for (Factura f : entradaFacturas) {
-				ficheroFactura.writeInt(f.getId());
-				StringBuffer nombre = new StringBuffer(f.getNombre());
-				nombre.setLength(5);// Limitamos tamaño String.
-				ficheroFactura.writeChars(nombre.toString());// Ojo! Debe ser toString
-				ficheroFactura.writeDouble(f.getImporte());
-			}
-			// 4bytes + (5*2) + 8 = 22
+		List<Empleado> arrayEmpleado = new LinkedList<>();
+		arrayEmpleado.add(new Administrador("Julio", 30, 3000, 150));
+		arrayEmpleado.add(new Empleado("María", 25, 3660));
+
+		// Desde el programa hacia el disco
+		try {
+			ObjectOutputStream salida = new ObjectOutputStream(
+					new FileOutputStream("c:" + File.separator + "ficheros" + File.separator + "empleados.dat"));
+			salida.writeObject(arrayEmpleado);
+			salida.close();
 			
-			ficheroFactura.seek(44);//Fijamos desde que posición leer
-			System.out.println(ficheroFactura.readInt());
-			String cadena ="";
-			for(int n=0;n<5;n++) {
-				cadena += ficheroFactura.readChar();//Lo he obtenido así porque si hago una lectura de String me da error.
+			//Desde el disco hacia el programa 
+			ObjectInputStream entrada = new ObjectInputStream (new FileInputStream("c:" + File.separator + "ficheros" + File.separator + "empleados.dat"));
+			List<Empleado> arrayEmpleadoEntrada = new LinkedList<>();
+			arrayEmpleadoEntrada = (LinkedList<Empleado>)entrada.readObject();
+			for(Empleado e:arrayEmpleadoEntrada) {
+				System.out.println(e);
 			}
-			System.out.println(cadena);
-			System.out.println(ficheroFactura.readDouble());
-
-		} catch (FileNotFoundException ex) {
-			System.out.println(ex.getMessage());
-		} catch (IOException ex) {
-			System.out.println(ex.getMessage());
+			entrada.close();
+		}catch(FileNotFoundException ex) {
+			ex.getMessage();
+		}catch(IOException ex) {
+			ex.getMessage();
+		}catch(Exception e) {
+			e.getMessage();
 		}
+		
 
 	}
 

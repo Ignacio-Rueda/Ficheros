@@ -39,7 +39,8 @@ De manera que no tenemos que cerrar ninguna de las dos conexiones con los ficher
 
 ## Escribir y Leer Bytes  
 Para leer y escribir bytes, utilizaremos: __FileInputStream__ y __FileOutputStream__ .  
-En este ejemplo, dada una imagen en una ruta determinada, crearemos un array con los bytes de la misma y a continuación generaremos una copia. 
+En este ejemplo, dada una imagen en una ruta determinada, crearemos un array con los bytes de la misma y a continuación generaremos una copia.  
+
 ![Lectura y escritura bytes](img/LeerYEscribirBytes.PNG)  
 
 ## Acceso Aleatorio  
@@ -69,6 +70,9 @@ La serialización se utiliza en java, con el objetivo, de que ese objeto que hem
 ¿Qué clases necesitamos en java para realizar ésta tarea?  
 - La interfaz: Serializable, aquellas clases que la implementen, le estaremos diciendo a java, que son susceptibles de ser convertidas en bytes para transferirlas a la red, ordenadores remotos o guardarlos en el disco duro.  
 - Además de la interfaz Serializable, necesitaremos __ObjectOutputStream__ y __ObjectInputStream__.
+
+
+![Serializacion](img/Serialización.PNG)  
   
 
 
