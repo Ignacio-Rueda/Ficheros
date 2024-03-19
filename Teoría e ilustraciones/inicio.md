@@ -5,6 +5,8 @@
 
 [Sobre-Buffer](#sobre-buffer)
 
+[Escribir-y-Leer-Bytes](#escribir-y-leer-bytes)
+
 ## Introducción  
 Existen dos tipos de flujos:  
 
@@ -29,3 +31,8 @@ En este ejemplo utilizamos try-with-resources
 En este ejemplo, volvemos a utilizar try-with-resources.  
 De manera que no tenemos que cerrar ninguna de las dos conexiones con los ficheros de entrada o salida.
 ![Sobre Buffer](img/BufferedReaderYBufferedWriter.PNG)  
+
+## Escribir y Leer Bytes  
+Para leer y escribir bytes, utilizaremos: __FileInputStream__ y __FileOutputStream__ .  
+En este ejemplo, dada una imagen en una ruta determinada, crearemos un array con los bytes de la misma y a continuación generaremos una copia. 
+![Lectura y escritura bytes](img/LeerYEscribirBytes.PNG)  
