@@ -2,6 +2,10 @@ package EjemplosAborrar;
 
 public class Administrador extends Empleado{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6096922259153479095L;
 	private double incentivo;
 	
 	public Administrador(String nombre,int edad,double sueldo,double incentivo) {

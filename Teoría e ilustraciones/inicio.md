@@ -73,6 +73,7 @@ La serialización se utiliza en java, con el objetivo, de que ese objeto que hem
 
 
 ![Serializacion](img/Serialización.PNG)  
+![Serializacion_2](img/Serializacion_2.PNG)  
   
 
 

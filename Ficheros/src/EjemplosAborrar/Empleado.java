@@ -3,6 +3,10 @@ package EjemplosAborrar;
 import java.io.Serializable;
 
 public class Empleado implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8924532254815330175L;
 	private String nombre;
 	private int edad;
 	private double sueldo;
