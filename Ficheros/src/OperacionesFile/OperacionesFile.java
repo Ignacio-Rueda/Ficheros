@@ -13,6 +13,8 @@ public class OperacionesFile {
 		System.out.println(fichero.getAbsolutePath());//Devuelve la ruta absoluta
 		System.out.println(fichero.exists());//Saber si existe o no.
 		
+		
+		
 		//Imprimir un listado de todo lo que haya en una carpeta.
 		
 		File ruta = new File("c:"+File.separator+"ficheros");
