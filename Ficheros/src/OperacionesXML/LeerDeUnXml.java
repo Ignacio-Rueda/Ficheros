@@ -24,9 +24,10 @@ public class LeerDeUnXml {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			
-			Document documento = builder.parse("c:/"+File.separator+"ficheros"+File.separator+"ficherosXml"+File.separator+"concesionario.xml");
+			Document documento = builder.parse("c:/"+File.separator+"ficheros"+File.separator+"ficherosXml"+File.separator+"recetas.xml");
 			
-			NodeList listaCoches = documento.getElementsByTagName("coche");
+			//NodeList listaCoches = documento.getElementsByTagName("coche");
+			NodeList listaCoches = documento.getDocumentElement().getChildNodes();
 			
 			for(int i=0;i<listaCoches.getLength();i++) {
 				Node nodo = listaCoches.item(i);//Cogemos el nodo
