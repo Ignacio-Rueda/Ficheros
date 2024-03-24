@@ -5,11 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class ProcesarDatos {
-	List<Persona> listadoPersonas = new LinkedList<>();// Almacena el listado de personas leídas en el fichero.
+	Set<Persona> listadoPersonas = new HashSet<>();// Almacena el listado de personas leídas en el fichero.
 
 	/**
 	 * 1º Lee los datos almacenados en un fichero. 2º Instancia la clase persona. 3º
