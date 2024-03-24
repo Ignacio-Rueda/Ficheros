@@ -1,8 +1,9 @@
-package OperacionesPoblacion;
+package OperacionesPoblacion.OperacionesListas;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Objects;
 
 public class Persona{
 	private static final String PATRON_DNI = "[0-9]{8}[A-Z]";
@@ -34,15 +35,14 @@ public class Persona{
 
 	}
 
-	// GETTERS & SETTERS
 
-	//
 	private int calcularEdad() {
 		LocalDate fechaActual = LocalDate.now();
 		Long edad = ChronoUnit.YEARS.between(this.fechaNacimiento,fechaActual);
 		return edad.intValue();
 	}
 
+	// GETTERS & SETTERS
 	public String getNombre() {
 		return nombre;
 	}
@@ -111,5 +111,6 @@ public class Persona{
 				
 				);
 	}
+
 
 }

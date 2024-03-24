@@ -1,17 +1,15 @@
-package OperacionesPoblacion;
+package OperacionesPoblacion.OperacionesListas;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 public class ProcesarDatos {
-	Set<Persona> listadoPersonas = new HashSet<>();// Almacena el listado de personas leídas en el fichero.
+	List<Persona> listadoPersonas = new LinkedList<>();// Almacena el listado de personas leídas en el fichero.
 
 	/**
 	 * 1º Lee los datos almacenados en un fichero. 2º Instancia la clase persona. 3º
@@ -44,8 +42,6 @@ public class ProcesarDatos {
 	 * Muestra todos los datos. (La fecha aparece formateada)
 	 */
 	public void mostrarDatos() {
-		System.out.printf(
-				"-----------------------------------\nMOSTRAR DATOS CON FECHA FORMATEADA\n-----------------------------------\n");
 		for (Persona p : listadoPersonas) {
 			System.out.println(p);
 		}
@@ -54,17 +50,9 @@ public class ProcesarDatos {
 	 * Muestra solo nombre y edad.
 	 */
 	public void mostrarNombreYedad() {
-		System.out.printf(
-				"-----------------------------------\nMOSTRAR DATOS NOMBRE Y EDAD\n------------------------------------------\n");
 		for (Persona p : listadoPersonas) {
 			System.out.printf("NOMBRE:%s EDAD:%d años.%n", p.getNombre(), p.getEdadActual());
 		}
-	}
-	/**
-	 * Ordenar datos.
-	 */
-	public void ordenarDatos() {
-		
 	}
 
 }
